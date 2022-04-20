@@ -1,20 +1,24 @@
-const path = require('path');
-const tomlFile = require('./stellar.toml')
+const path = require("path");
+const fastify = require("fastify")();
 
-const fastify = require('fastify')({
-  logger: false
+fastify.register(require("point-of-view"), {
+  engine: {
+    handlebars: require("handlebars"),
+  },
 });
 
-fastify.get('*', function(request, reply) {  
-  reply.headers({
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'text/plain'
-  })
-  .send(tomlFile)
+fastify.get("*", function (request, reply) {
+  reply
+    .status(204)
+    .headers({
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "text/plain",
+    })
+    .view("/stellar.toml");
 });
 
 // Run the server and report out to the logs
-fastify.listen(process.env.PORT, '0.0.0.0', function(err, address) {
+fastify.listen(process.env.PORT, "0.0.0.0", function (err, address) {
   if (err) {
     fastify.log.error(err);
     process.exit(1);
