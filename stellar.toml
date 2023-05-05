@@ -1,5 +1,20 @@
 VERSION = "0.1.0"
 NETWORK_PASSPHRASE = "Test SDF Network ; September 2015"
 ACCOUNTS = [ 
-  "REPLACE_WITH_YOUR_QUEST_ACCOUNT_PUBLIC_KEY" 
+  "GBNSP7WHDUV56PZ3SHEWCAYOKQQFQ63PHBHJUDPHICUSSTAW2O564FLT" 
 ]
+SIGNING_KEY = "GBNSP7WHDUV56PZ3SHEWCAYOKQQFQ63PHBHJUDPHICUSSTAW2O564FLT"
+
+[[PRINCIPALS]]
+name = "Bruno Nascimento"
+email = "bruno.nascimento@ckl.io"
+keybase = "brunonascdev"
+github = "https://www.github.com/brunonascdev"
+
+[DOCUMENTATION]
+ORG_NAME = "Stellar Development Foundation"
+ORG_URL = "https://stellar.org"
+ORG_DESCRIPTION = "Demo Wallet"
+ORG_KEYBASE = "stellar.public"
+ORG_TWITTER = "StellarOrg"
+ORG_GITHUB = "stellar"
